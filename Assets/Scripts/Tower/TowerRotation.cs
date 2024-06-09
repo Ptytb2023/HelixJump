@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Tower
 {
-	public class ObjectRotation
+	public class TowerRotation
 	{
 		private readonly Transform _transform;
 		private readonly float _speedRotation;
 
-		public ObjectRotation(float speedRotation, Transform transform)
+		public TowerRotation(float speedRotation, Transform transform)
 		{
 			if (speedRotation <= 0)
 				throw new ArgumentOutOfRangeException($"{nameof(speedRotation)}" +
@@ -30,4 +30,5 @@ namespace Tower
 			_transform.rotation = Quaternion.Slerp(currentRotation, newRotation, speedRotation);
 		}
 	}
+	
 }

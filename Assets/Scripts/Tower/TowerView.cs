@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Inputs.Tower;
 using UnityEngine;
@@ -9,12 +10,17 @@ namespace Tower
 	{
 		[SerializeField] private float _towerSpeedRotation;
 
-		[Inject] private IInputTower _inputTower;
+		private IInputTower _inputTower;
+		private TowerRotation _towerRotation;
+		
+		public float TowerSpeedRotation => _towerSpeedRotation;
+		
+		[Inject]
+		private void Construct(IInputTower inputTower) => 
+			_inputTower = inputTower;
 
-		private ObjectRotation _objectRotation;
-
-		public void Start() =>
-			_objectRotation = new ObjectRotation(_towerSpeedRotation, transform);
+		private void Start() => 
+			_towerRotation = new TowerRotation(_towerSpeedRotation, transform);
 
 		private void OnEnable() =>
 			_inputTower.PressedOrReleasesKey += OnPressedOrReleasesKey;
@@ -30,7 +36,7 @@ namespace Tower
 			while (_inputTower.IsPressed)
 			{
 				float deltaX = _inputTower.DeltaX;
-				_objectRotation.AddRotation(deltaX);
+				_towerRotation.AddRotation(deltaX);
 				yield return new WaitForFixedUpdate();
 			}
 		}
