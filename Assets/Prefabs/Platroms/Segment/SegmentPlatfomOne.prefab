@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8572815694617996400}
   - component: {fileID: 6160648424489518747}
   - component: {fileID: 6060874900321189863}
+  - component: {fileID: 5621437232797530408}
+  - component: {fileID: 4538109179242597341}
   m_Layer: 0
   m_Name: SegmentPlatfomOne
   m_TagString: Untagged
@@ -1600,3 +1602,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2771891419033805035}
   m_Mesh: {fileID: 0}
+--- !u!64 &5621437232797530408
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2771891419033805035}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!114 &4538109179242597341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2771891419033805035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc94beb670db499da6f518a04b856ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
