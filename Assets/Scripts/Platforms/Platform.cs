@@ -1,8 +1,7 @@
 using UnityEngine;
 
-namespace SegmentPlatform
+namespace Platforms
 {
 	public class Platform : MonoBehaviour
-	{
-	}
+	{ }
 }

@@ -1,6 +1,6 @@
 using System;
+using Platforms;
 using UnityEngine;
-using SegmentPlatform;
 
 namespace Ball
 {
