@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Platforms;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Generation
 {
