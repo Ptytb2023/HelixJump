@@ -21,9 +21,7 @@ namespace Generation
 
 		public List<Platform> GetPlatforms()
 		{
-			var platforms = new List<Platform>(CountSpawnPlatform + 2);
-
-			platforms.Add(_startPlatformPrefab);
+			var platforms = new List<Platform>(CountSpawnPlatform + 2) { _startPlatformPrefab };
 
 			for (var i = 0; i < CountSpawnPlatform; i++)
 			{
