@@ -6,10 +6,10 @@ using UnityEngine;
 namespace Generation
 {
 	[CreateAssetMenu(
-		fileName = nameof(GenerationData),
-		menuName = "ScriptObject/Data/" + nameof(GenerationData),
+		fileName = nameof(GenerationDataSo),
+		menuName = "ScriptObject/Data/" + nameof(GenerationDataSo),
 		order = 51)]
-	public class GenerationData : ScriptableObject
+	public class GenerationDataSo : ScriptableObject
 	{
 		[SerializeField] private Platform _startPlatformPrefab;
 		[SerializeField] private Platform _endPlatformPrefab;

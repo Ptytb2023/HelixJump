@@ -10,7 +10,7 @@ namespace Effects
 	public class BallEffect
 	{
 		private Dictionary<EffectType, ParticleSystem> _effects;
-
+		
 		public BallEffect(IEnumerable<DataEffect> dataEffects)
 			=> Initialization(dataEffects);
 

@@ -1,8 +1,4 @@
-using UnityEngine;
-
 namespace Platforms
 {
-	public class ObstaclePlatform : MonoBehaviour
-	{
-	}
+	public class ObstaclePlatform : SegmentPlatform { }
 }

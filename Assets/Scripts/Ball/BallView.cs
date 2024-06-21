@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cinemachine;
 using Effects;
 using Physics;
 using UnityEngine;
@@ -11,7 +12,8 @@ namespace Ball
 	{
 		[SerializeField] private List<DataEffect> _dataEffects;
 		[SerializeField] private BouncedData _bouncedData;
-
+		[SerializeField] private CinemachineImpulseSource _cinemachineImpulse;
+		
 		private BallEffect _effect;
 		private Bounced _bounced;
 		private CollisionBall _collisionBall;
@@ -60,6 +62,8 @@ namespace Ball
 		private void Die()
 		{
 			_effect.PlayEffect(_collisionBall.PointContact, null, EffectType.Dead);
+			_cinemachineImpulse.GenerateImpulse();
+			
 			Dead?.Invoke();
 			Destroy(gameObject);
 		}

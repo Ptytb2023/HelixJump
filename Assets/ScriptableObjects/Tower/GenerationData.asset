@@ -22,4 +22,4 @@ MonoBehaviour:
   - {fileID: 5932274278778343490, guid: cc38baa386a6b1641b495b89f780c20d, type: 3}
   - {fileID: 3056888074656004720, guid: edc24cbcfed81c0488ea43cfac8089b6, type: 3}
   <OffsetBetweenPlatforms>k__BackingField: 0.5
-  <CountSpawnPlatform>k__BackingField: 7
+  <CountSpawnPlatform>k__BackingField: 100

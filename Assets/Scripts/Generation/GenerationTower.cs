@@ -2,13 +2,15 @@ using System;
 using System.Collections.Generic;
 using Platforms;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Generation
 {
 	public class GenerationTower : MonoBehaviour
 	{
-		[SerializeField] private GenerationData _generationData;
+		[SerializeField] private GenerationDataSo _generationDataSo;
+		[SerializeField] private ExplosionConfigSo _explosionConfigSo;
 		[SerializeField] private Transform _pillar;
 
 		private readonly List<Platform> _platforms = new List<Platform>();
@@ -38,7 +40,7 @@ namespace Generation
 
 		private void SpawnPlatform()
 		{
-			List<Platform> spawnPlatforms = _generationData.GetPlatforms();
+			List<Platform> spawnPlatforms = _generationDataSo.GetPlatforms();
 			Platform lastPlatform = null;
 
 			foreach (Platform platform in spawnPlatforms)
@@ -47,6 +49,8 @@ namespace Generation
 				Vector3 position = GetNewPositionOrDefault(lastPlatform, offsetBetweenPlatform);
 
 				lastPlatform = CreatePlatform(platform, position);
+				lastPlatform.Init(_explosionConfigSo);
+				
 				_platforms.Add(lastPlatform);
 			}
 		}
@@ -55,7 +59,7 @@ namespace Generation
 		{
 			Vector3 originalScale = _pillar.localScale;
 			float towerHeight = height / 2f;
-			Vector3 multiplyHeightTower = _generationData.OffsetBetweenPlatforms * MultiplyHeightTower * Vector3.up;
+			Vector3 multiplyHeightTower = _generationDataSo.OffsetBetweenPlatforms * MultiplyHeightTower * Vector3.up;
 
 			_pillar.localScale = new Vector3(originalScale.x, towerHeight, originalScale.z) + multiplyHeightTower;
 
@@ -74,7 +78,7 @@ namespace Generation
 
 		private float GetOffsetBetweenOrDefault(Platform lastPlatform)
 		{
-			float defaultOffset = _generationData.OffsetBetweenPlatforms;
+			float defaultOffset = _generationDataSo.OffsetBetweenPlatforms;
 
 			if (lastPlatform == null)
 				return defaultOffset;

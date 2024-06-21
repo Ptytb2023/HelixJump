@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6160648424489518747}
   - component: {fileID: 6060874900321189863}
   - component: {fileID: 5621437232797530408}
-  - component: {fileID: 2575745971215458152}
+  - component: {fileID: 4253595614072098109}
   m_Layer: 0
   m_Name: SegmentPlatfomOne
   m_TagString: Untagged
@@ -1624,7 +1624,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &2575745971215458152
+--- !u!114 &4253595614072098109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1633,6 +1633,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2771891419033805035}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d2542a839cb63549a264381f05117dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f41bed134fa3d0478fe7fc927de005a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
