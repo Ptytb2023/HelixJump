@@ -18,8 +18,8 @@ namespace Ball
 
 		private void OnCollisionEnter(Collision other)
 		{
-			if (_isCollision)
-				return;
+			// if (_isCollision)
+			// 	return;
 
 			PointContact = other.contacts[0].point;
 
