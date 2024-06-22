@@ -1,19 +1,26 @@
 using System;
 using NewInputSystem;
-using UnityEngine.InputSystem; 
+using UnityEngine.InputSystem;
 
 namespace Inputs.Tower
 {
 	public sealed class InputTower : BaseInput, IInputTower
 	{
+		private float _multiplayDeltaX = 1f;
+
 		public InputTower(MainInputMap inputMap) : base(inputMap)
 		{
 		}
 
 		public event Action<bool> PressedOrReleasesKey;
 
+		public void SetMultiplayDeltaX(float multiplay)
+		{
+			_multiplayDeltaX = multiplay;
+		}
+
 		public bool IsPressed { get; private set; }
-		public float DeltaX => InputMap.Tower.DeltaX.ReadValue<float>();
+		public float DeltaX => InputMap.Tower.DeltaX.ReadValue<float>() * _multiplayDeltaX;
 
 		protected override void TurnOn()
 		{

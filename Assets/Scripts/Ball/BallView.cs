@@ -56,6 +56,7 @@ namespace Ball
 			_effect.PlayEffect(positionSpot, collision.transform, EffectType.Spot);
 		}
 
+		
 		private void OnCollisionObstacleEnter()
 			=> Die();
 

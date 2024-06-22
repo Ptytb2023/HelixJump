@@ -20,8 +20,15 @@ namespace Platforms
 			_rigidbody.isKinematic = false;
 
 			_rigidbody.AddExplosionForce(force, position, radius);
+			CleatChildren();
 
 			Destroy(gameObject, delayDestroy);
+		}
+
+		private void CleatChildren()
+		{
+			for (int i = 0; i < transform.childCount; i++)
+				transform.GetChild(i).ClearParent();
 		}
 	}
 }

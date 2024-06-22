@@ -6,7 +6,7 @@ namespace Effects
 	[Serializable]
 	public class DataEffect
 	{
-		[field: SerializeField] public ParticleSystem ParticleEffect { get; private set; }
+		[field: SerializeField] public ParticleEffectsForLeanPool ParticleEffect { get; private set; }
 		[field: SerializeField] public EffectType EffectType { get; private set; }
 	}
 	

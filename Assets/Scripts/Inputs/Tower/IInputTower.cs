@@ -7,5 +7,6 @@ namespace Inputs.Tower
 		public bool IsPressed { get; }
 		public float DeltaX { get; }
 		public event Action<bool> PressedOrReleasesKey;
+		public void SetMultiplayDeltaX(float multiplay);
 	}
 }
