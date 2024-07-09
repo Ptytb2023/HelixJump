@@ -1,3 +1,4 @@
+using ModestTree.Util;
 using UnityEngine;
 
 namespace Physics
@@ -16,13 +17,19 @@ namespace Physics
 		public void BouncedOff(Vector3 direction) =>
 			_rigidbody.AddForce(direction * _bouncedData.Force, ForceMode.VelocityChange);
 
+		public void TryBouncedOffUp()
+		{
+			if (_rigidbody.velocity.y <= 0.0f)
+				BouncedOff(Vector3.up);
+		}
+
 		public void ClampHeight()
 		{
 			Vector3 velocity = _rigidbody.velocity;
 
 			_rigidbody.velocity = velocity.y >= 0f
-					? Vector3.ClampMagnitude(velocity, _bouncedData.MaxHeight)
-					: velocity;
+				? Vector3.ClampMagnitude(velocity, _bouncedData.MaxHeight)
+				: velocity;
 		}
 	}
 }
